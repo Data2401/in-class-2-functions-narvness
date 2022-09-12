@@ -1,0 +1,90 @@
+---
+title: "In Class Lab"
+author: "Dr. Shoemaker"
+date: "DATA 2401"
+output: html_document
+---
+**Note: Your exam will be in a similar format to this (RMarkdown File with Questions and Code chunks for your answers), so make sure you have the process for knitting to html working.** 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## In Class Activity 
+
+1. Write a function to simulate rolling a 6-sided die and returns the result.
+
+```{r}
+
+roll <- function(){
+  result <- sample(1:6,1)
+  return(result)
+  
+}
+
+roll()
+
+```
+
+
+
+1. Write a function to simulate rolling 2 6-sided dice that returns the sum of the rolls. 
+
+```{r}
+
+roll <- function(){
+  r1 <- sample(1:6,1)
+  r2 <- sample(1:6,1)
+
+  return(r1+r2)
+}
+roll()
+
+```
+
+
+1. Write a function that takes two people name's as strings, simulates rolling a 6-sided die for each of the names, then returns the name of the person with the higher roll. The function should reroll once on a tie, but if there is a second tie, it should return "draw". 
+
+```{r}
+# Your one-roll function goes here
+game <- function(person1, person2){
+  roll_1 = sample(1:6,1)
+  roll_2 = sample(1:6,1)
+  
+  if roll
+                  
+}
+
+```
+
+
+2. Write a second function (you may start by modifying the first one) that takes two names as strings, simulates both of them rolling die 15 times, and returns the name of the person who "won" more rolls. Don't reroll ties this time, but don't count them as "wins". 
+
+```{r}
+# Your 15-roll function goes here
+game_of_15 <- function(person1, person2){
+  roll1 <- sample(1:6, 15, replace = T)
+  roll2 <- sample(1:6, 15, replace = T)
+ 
+  sum1 <- sum(roll1 > roll2)
+  sum2 <- sum(roll2 > roll1)
+  if (sum1 == sum2){
+    return("It's a draw")
+  } else if (sum1 > sum2){
+    return(paste(person1, "wins"))
+  } else {
+    return(paste(person2, "wins!"))
+  }
+}
+
+game_of_15("a", "b")
+
+```
+
+
+3. Modify your function from (2) so that the person in the first argument has a die that is weighted to get higher numbers more often (you may decide the actual percentage change). Run the function ten or so times. Does the second person ever win?
+
+```{r}
+# Your "cheating" function goes here
+```
+
